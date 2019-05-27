@@ -1,6 +1,7 @@
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,9 +17,8 @@ public class Checkers extends Application {
 
     private Image imageback = new Image("images/board.jpg");
     private ImageView imageWhitePawn = new ImageView("images/white_pawn.png");
-    private Image imageBlackPawn = new Image("images/black_pawn.png");
-    private ImageView imageViewBlackPawn = new ImageView(imageBlackPawn);
-    private Image imageBlackPawn1 = new Image("images/black_pawn.png");
+    private Image imageBlackPawnB = new Image("images/black_pawn.png");
+    private Image imageBlackPawnW = new Image("images/white_pawn.png");
     String nameButton;
 
     public static void main(String[] args) {
@@ -53,36 +53,88 @@ public class Checkers extends Application {
 
         Button buttonB1 = new Button();
         buttonB1.setMaxSize(50,50);
-        buttonB1.setGraphic(imageViewBlackPawn);
+        buttonB1.setGraphic(new ImageView(imageBlackPawnB));
         buttonB1.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB1.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB1");
+        });
         Button buttonB2 = new Button();
         buttonB2.setMaxSize(50,50);
-        buttonB2.setGraphic(imageViewBlackPawn);
+        buttonB2.setGraphic(new ImageView(imageBlackPawnB));
         buttonB2.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB2.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB2");
+        });
         Button buttonB3 = new Button();
         buttonB3.setMaxSize(50,50);
-        buttonB3.setGraphic(imageViewBlackPawn);
+        buttonB3.setGraphic(new ImageView(imageBlackPawnB));
         buttonB3.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB3.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB3");
+        });
         Button buttonB4 = new Button();
         buttonB4.setMaxSize(50,50);
-        buttonB4.setGraphic(imageViewBlackPawn);
+        buttonB4.setGraphic(new ImageView(imageBlackPawnB));
         buttonB4.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB1.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB4");
+        });
         Button buttonB5 = new Button();
-        buttonB5.setText("B");
+        buttonB5.setMaxSize(50,50);
+        buttonB5.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB5.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB5.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB5");
+        });
         Button buttonB6 = new Button();
-        buttonB6.setText("B");
+        buttonB6.setMaxSize(50,50);
+        buttonB6.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB6.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB6.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB6");
+        });
         Button buttonB7 = new Button();
-        buttonB7.setText("B");
+        buttonB7.setMaxSize(50,50);
+        buttonB7.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB7.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB7.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB7");
+        });
         Button buttonB8 = new Button();
-        buttonB8.setText("B");
+        buttonB8.setMaxSize(50,50);
+        buttonB8.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB8.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB8.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB8");
+        });
         Button buttonB9 = new Button();
-        buttonB9.setText("B");
+        buttonB9.setMaxSize(50,50);
+        buttonB9.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB9.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB9.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB9");
+        });
         Button buttonB10 = new Button();
-        buttonB10.setText("B");
+        buttonB10.setMaxSize(50,50);
+        buttonB10.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB10.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB10.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB10");
+        });
         Button buttonB11 = new Button();
-        buttonB11.setText("B");
+        buttonB11.setMaxSize(50,50);
+        buttonB11.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB11.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB11.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB11");
+        });
         Button buttonB12 = new Button();
-        buttonB12.setText("B");
+        buttonB12.setMaxSize(50,50);
+        buttonB12.setGraphic(new ImageView(imageBlackPawnB));
+        buttonB12.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonB12.setOnAction((e) -> {
+            System.out.println("You clicked on buttonB12");
+        });
 
         grid.add(buttonB1,1,1);
         grid.add(buttonB2,3,1);
@@ -98,29 +150,89 @@ public class Checkers extends Application {
         grid.add(buttonB12,7,3);
 
         Button buttonW1 = new Button();
-        buttonW1.setText("W");
+        buttonW1.setMaxSize(50,50);
+        buttonW1.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW1.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW1.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW1");
+        });
         Button buttonW2 = new Button();
-        buttonW2.setText("W");
+        buttonW2.setMaxSize(50,50);
+        buttonW2.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW2.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW2.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW2");
+        });
         Button buttonW3 = new Button();
-        buttonW3.setText("W");
+        buttonW3.setMaxSize(50,50);
+        buttonW3.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW3.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW3.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW3");
+        });
         Button buttonW4 = new Button();
-        buttonW4.setText("W");
+        buttonW4.setMaxSize(50,50);
+        buttonW4.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW4.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW4.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW4");
+        });
         Button buttonW5 = new Button();
-        buttonW5.setText("W");
+        buttonW5.setMaxSize(50,50);
+        buttonW5.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW5.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW5.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW5");
+        });
         Button buttonW6 = new Button();
-        buttonW6.setText("W");
+        buttonW6.setMaxSize(50,50);
+        buttonW6.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW6.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW6.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW6");
+        });
         Button buttonW7 = new Button();
-        buttonW7.setText("W");
+        buttonW7.setMaxSize(50,50);
+        buttonW7.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW7.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW7.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW7");
+        });
         Button buttonW8 = new Button();
-        buttonW8.setText("W");
+        buttonW8.setMaxSize(50,50);
+        buttonW8.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW8.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW8.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW8");
+        });
         Button buttonW9 = new Button();
-        buttonW9.setText("W");
+        buttonW9.setMaxSize(50,50);
+        buttonW9.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW9.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW9.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW9");
+        });
         Button buttonW10 = new Button();
-        buttonW10.setText("W");
+        buttonW10.setMaxSize(50,50);
+        buttonW10.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW10.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW10.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW10");
+        });
         Button buttonW11 = new Button();
-        buttonW11.setText("W");
+        buttonW11.setMaxSize(50,50);
+        buttonW11.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW11.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW11.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW11");
+        });
         Button buttonW12 = new Button();
-        buttonW12.setText("W");
+        buttonW12.setMaxSize(50,50);
+        buttonW12.setGraphic(new ImageView(imageBlackPawnW));
+        buttonW12.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        buttonW12.setOnAction((e) -> {
+            System.out.println("You clicked on buttonW12");
+        });
 
         grid.add(buttonW1,2,6);
         grid.add(buttonW2,4,6);
