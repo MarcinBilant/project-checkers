@@ -3,6 +3,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -14,6 +15,10 @@ import java.util.List;
 public class Checkers extends Application {
 
     private Image imageback = new Image("images/board.jpg");
+    private ImageView imageWhitePawn = new ImageView("images/white_pawn.png");
+    private Image imageBlackPawn = new Image("images/black_pawn.png");
+    private ImageView imageViewBlackPawn = new ImageView(imageBlackPawn);
+    private Image imageBlackPawn1 = new Image("images/black_pawn.png");
     String nameButton;
 
     public static void main(String[] args) {
@@ -29,7 +34,7 @@ public class Checkers extends Application {
 
         GridPane grid = new GridPane();
         //grid.setAlignment(Pos.CENTER_RIGHT);
-        grid.setPadding(new Insets(0,0,0,20));
+        grid.setPadding(new Insets(0,0,0,0));
         grid.setBackground(background);
 
         for (int i = 0; i < 12; i++) {
@@ -47,13 +52,21 @@ public class Checkers extends Application {
         //grid.getRowConstraints().add(new RowConstraints(120));
 
         Button buttonB1 = new Button();
-        buttonB1.setText("B");
+        buttonB1.setMaxSize(50,50);
+        buttonB1.setGraphic(imageViewBlackPawn);
+        buttonB1.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
         Button buttonB2 = new Button();
-        buttonB2.setText("B");
+        buttonB2.setMaxSize(50,50);
+        buttonB2.setGraphic(imageViewBlackPawn);
+        buttonB2.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
         Button buttonB3 = new Button();
-        buttonB3.setText("B");
+        buttonB3.setMaxSize(50,50);
+        buttonB3.setGraphic(imageViewBlackPawn);
+        buttonB3.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
         Button buttonB4 = new Button();
-        buttonB4.setText("B");
+        buttonB4.setMaxSize(50,50);
+        buttonB4.setGraphic(imageViewBlackPawn);
+        buttonB4.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
         Button buttonB5 = new Button();
         buttonB5.setText("B");
         Button buttonB6 = new Button();
