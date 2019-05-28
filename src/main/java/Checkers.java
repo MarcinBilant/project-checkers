@@ -72,7 +72,7 @@ public class Checkers extends Application {
         buttonB1.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB1.setOnMousePressed((event )->  {
+        buttonB1.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB1);
         });
 
@@ -85,7 +85,7 @@ public class Checkers extends Application {
         buttonB2.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB2.setOnMousePressed((event )->  {
+        buttonB2.setOnMousePressed((event) -> {
 
             mouseMovedPressed(event, buttonB2);
         });
@@ -99,8 +99,8 @@ public class Checkers extends Application {
         buttonB3.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB3.setOnMousePressed((event )->  {
-           mouseMovedPressed(event, buttonB3);
+        buttonB3.setOnMousePressed((event) -> {
+            mouseMovedPressed(event, buttonB3);
         });
 
         buttonB3.setOnMouseReleased((event) -> {
@@ -112,22 +112,22 @@ public class Checkers extends Application {
         buttonB1.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB4.setOnMousePressed((event )->  {
-           mouseMovedPressed(event, buttonB4);
+        buttonB4.setOnMousePressed((event) -> {
+            mouseMovedPressed(event, buttonB4);
         });
 
         buttonB4.setOnMouseReleased((event) -> {
-           mouseMovedReleased(event,grid,buttonB4);
+            mouseMovedReleased(event, grid, buttonB4);
         });
 
         Button buttonB5 = new Button();
         setGraphicsBlack(buttonB5);
-        buttonB5.setOnMousePressed((event )->  {
+        buttonB5.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB1);
         });
 
         buttonB5.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event,grid,buttonB5);
+            mouseMovedReleased(event, grid, buttonB5);
         });
 
         Button buttonB6 = new Button();
@@ -135,7 +135,7 @@ public class Checkers extends Application {
         buttonB6.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB6.setOnMousePressed((event )->  {
+        buttonB6.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB6);
 
         });
@@ -145,11 +145,11 @@ public class Checkers extends Application {
         });
 
         Button buttonB7 = new Button();
-       setGraphicsBlack(buttonB7);
+        setGraphicsBlack(buttonB7);
         buttonB7.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB7.setOnMousePressed((event )->  {
+        buttonB7.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB7);
         });
 
@@ -162,7 +162,7 @@ public class Checkers extends Application {
         buttonB8.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB8.setOnMousePressed((event )->  {
+        buttonB8.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB8);
         });
 
@@ -175,7 +175,7 @@ public class Checkers extends Application {
         buttonB9.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB9.setOnMousePressed((event )->  {
+        buttonB9.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB9);
         });
 
@@ -188,7 +188,7 @@ public class Checkers extends Application {
         buttonB10.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB10.setOnMousePressed((event )->  {
+        buttonB10.setOnMousePressed((event) -> {
 
             mouseMovedPressed(event, buttonB10);
 
@@ -199,11 +199,11 @@ public class Checkers extends Application {
         });
 
         Button buttonB11 = new Button();
-       setGraphicsBlack(buttonB11);
+        setGraphicsBlack(buttonB11);
         buttonB11.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB11.setOnMousePressed((event )->  {
+        buttonB11.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB11);
 
         });
@@ -218,7 +218,7 @@ public class Checkers extends Application {
             makeMove(e, true);
         });
 
-        buttonB12.setOnMousePressed((event )->  {
+        buttonB12.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonB12);
         });
 
@@ -244,7 +244,7 @@ public class Checkers extends Application {
         buttonW1.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW1.setOnMousePressed((event )->  {
+        buttonW1.setOnMousePressed((event) -> {
 
             mouseMovedPressed(event, buttonW1);
         });
@@ -258,7 +258,7 @@ public class Checkers extends Application {
         buttonW2.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW2.setOnMousePressed((event )->  {
+        buttonW2.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW2);
         });
 
@@ -271,7 +271,7 @@ public class Checkers extends Application {
         buttonW3.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW3.setOnMousePressed((event )->  {
+        buttonW3.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW3);
         });
 
@@ -280,11 +280,11 @@ public class Checkers extends Application {
         });
 
         Button buttonW4 = new Button();
-       setGraphicsWhite(buttonW4);
+        setGraphicsWhite(buttonW4);
         buttonW4.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW4.setOnMousePressed((event )->  {
+        buttonW4.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW4);
         });
 
@@ -293,11 +293,11 @@ public class Checkers extends Application {
         });
 
         Button buttonW5 = new Button();
-       setGraphicsWhite(buttonW5);
+        setGraphicsWhite(buttonW5);
         buttonW5.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW5.setOnMousePressed((event )->  {
+        buttonW5.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW5);
         });
 
@@ -306,11 +306,11 @@ public class Checkers extends Application {
         });
 
         Button buttonW6 = new Button();
-       setGraphicsWhite(buttonW6);
+        setGraphicsWhite(buttonW6);
         buttonW6.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW6.setOnMousePressed((event )->  {
+        buttonW6.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW6);
 
         });
@@ -324,7 +324,7 @@ public class Checkers extends Application {
         buttonW7.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW7.setOnMousePressed((event )->  {
+        buttonW7.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW7);
         });
 
@@ -337,7 +337,7 @@ public class Checkers extends Application {
         buttonW8.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW8.setOnMousePressed((event )->  {
+        buttonW8.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW8);
         });
 
@@ -350,7 +350,7 @@ public class Checkers extends Application {
         buttonW9.setOnAction((e) -> {
             makeMove(e, false);
         });
-        buttonW9.setOnMousePressed((event )->  {
+        buttonW9.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW9);
         });
 
@@ -359,12 +359,12 @@ public class Checkers extends Application {
         });
 
         Button buttonW10 = new Button();
-       setGraphicsWhite(buttonW10);
+        setGraphicsWhite(buttonW10);
         buttonW10.setOnAction((e) -> {
             makeMove(e, false);
         });
 
-        buttonW10.setOnMousePressed((event )->  {
+        buttonW10.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW10);
         });
 
@@ -378,7 +378,7 @@ public class Checkers extends Application {
             makeMove(e, false);
         });
 
-        buttonW11.setOnMousePressed((event )->  {
+        buttonW11.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW11);
         });
 
@@ -392,35 +392,84 @@ public class Checkers extends Application {
             System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
             makeMove(e, false);
             System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
-            moveComputer();
-                whichColumnComputer = (int) buttonB11.getLayoutX() / 60;
-                whichRowComputer = (int) buttonB11.getLayoutY() / 60;
-                System.out.println(whichColumnComputer + "  " + whichRowComputer);
+            moveComputerRandom();
+            System.out.println("ComputerPawn   " + whichComputerPawn + " ComputerLeftRight  "  + moveComputerLeftRight );
+            if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB1);
+            }
+            if (whichComputerPawn == 1 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB1);
+            }
+            if (whichComputerPawn == 2 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB2);
+            }
+            if (whichComputerPawn == 2 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB2);
+            }
+            if (whichComputerPawn == 3 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB3);
+            }
+            if (whichComputerPawn == 3 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB3);
+            }
+            if (whichComputerPawn == 4 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB4);
+            }
+            if (whichComputerPawn == 4 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB4);
+            }
+            if (whichComputerPawn == 5 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB5);
+            }
+            if (whichComputerPawn == 5 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB5);
+            }
+            if (whichComputerPawn == 6 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB6);
+            }
+            if (whichComputerPawn == 6 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB6);
+            }
+            if (whichComputerPawn == 7 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB7);
+            }
+            if (whichComputerPawn == 7 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB7);
+            }
+            if (whichComputerPawn == 8 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB8);
+            }
+            if (whichComputerPawn == 8 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB8);
+            }
+            if (whichComputerPawn == 9 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB9);
+            }
+            if (whichComputerPawn == 9 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB9);
+            }
+            if (whichComputerPawn == 10 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB10);
+            }
+            if (whichComputerPawn == 10 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB10);
+            }
 
-                Node isEmpty = getNodeFromGridPane(grid, whichColumnComputer - 1, whichRowComputer + 1);
-                if (isEmpty == null && whichColumn <= 8 && whichRow <= 8 && whichColumn > 0 && whichRow > 0
-                        && whichComputerPawn == 11 && moveComputerLeftRight == 0) {
-                    grid.add(buttonB11, whichColumnComputer - 1, whichRowComputer + 1);
-
-
-                } else if (isEmpty == null && whichColumn <= 8 && whichRow <= 8 && whichColumn > 0 && whichRow > 0
-                        && whichComputerPawn == 11 && moveComputerLeftRight == 1) {
-                    grid.add(buttonB11, whichColumnComputer + 1, whichRowComputer + 1);
-
-
-                }
-
-                /*if (whichComputerPawn == 1 && moveComputerLeftRight == 0) {
-                    whichColumnComputer = (int)buttonB1.getLayoutX()/60;
-                    whichRowComputer = (int)buttonB1.getLayoutY()/60;
-                    grid.add(buttonB1, whichColumnComputer-1, whichRowComputer+1);
-
-                }*/
-
-
+            if (whichComputerPawn == 11 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB11);
+            }
+            if (whichComputerPawn == 11 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB11);
+            }
+            if (whichComputerPawn == 12 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB12);
+            }
+            if (whichComputerPawn == 12 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB12);
+            }
         });
 
-        buttonW12.setOnMousePressed((event )->  {
+        buttonW12.setOnMousePressed((event) -> {
             mouseMovedPressed(event, buttonW12);
         });
 
@@ -446,7 +495,6 @@ public class Checkers extends Application {
         Scene scene = new Scene(grid, 725, 610, Color.BLACK);
 
 
-
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -469,22 +517,52 @@ public class Checkers extends Application {
     }
 
 
-    public void moveComputer() {
+    public void moveComputerRandom() {
 
-        whichComputerPawn = 11;
-        moveComputerLeftRight = 1;
+        //whichComputerPawn = 9;
+        //moveComputerLeftRight = 0;
 
         if (isMoveBlack) {
             Random random = new Random();
 
-            //whichComputerPawn = random.nextInt(12)+1;
-            //moveComputerLeftRight = random.nextInt(2);
+           whichComputerPawn = random.nextInt(12)+1;
+           moveComputerLeftRight = random.nextInt(2);
 
-            //whichColumnComputer = (int)button.getLayoutX()/60;
-            //whichRowComputer = (int)button.getLayoutY()/60;
         }
 
     }
+
+    public void moveComputerLeft(GridPane grid, Button button) {
+
+        whichColumnComputer = (int) button.getLayoutX() / 60;
+        whichRowComputer = (int) button.getLayoutY() / 60;
+
+        Node isEmptyLeft = getNodeFromGridPane(grid, whichColumnComputer - 1, whichRowComputer + 1);
+
+            if (isEmptyLeft == null && whichColumnComputer - 1 <= 8 && whichRowComputer + 1 <= 8
+                && whichColumnComputer - 1 > 0 && whichRowComputer + 1 > 0) {
+                grid.getChildren().remove(button);
+                grid.add(button, whichColumnComputer - 1, whichRowComputer + 1);
+            }
+
+
+}
+
+    public void moveComputerRight(GridPane grid, Button button) {
+
+        whichColumnComputer = (int) button.getLayoutX() / 60;
+        whichRowComputer = (int) button.getLayoutY() / 60;
+
+        Node isEmptyRight = getNodeFromGridPane(grid, whichColumnComputer + 1, whichRowComputer + 1);
+
+        if (isEmptyRight == null && whichColumnComputer + 1 <= 8 && whichRowComputer + 1 <= 8
+                && whichColumnComputer + 1 > 0 && whichRowComputer + 1 > 0) {
+            grid.getChildren().remove(button);
+            grid.add(button, whichColumnComputer + 1, whichRowComputer + 1);
+        }
+    }
+
+
     Button button = new Button();
     public void mouseMoved(MouseEvent event) {
         double sceneX;
@@ -508,13 +586,18 @@ public class Checkers extends Application {
 
         Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
         if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-            grid.add(button, whichColumn, whichRow);
+           grid.getChildren().remove(button);
+           grid.add(button,whichColumn, whichRow);
+
+
         }
         else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
+            grid.getChildren().remove(button);
             grid.add(button,column,row);
         }
 
         else  {
+            grid.getChildren().remove(button);
             grid.add(button,column,row);
 
         }
