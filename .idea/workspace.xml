@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062d9fbe-4919-45fc-ae6d-756b26f5a49f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Checkers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Checkers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/black_pawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/black_pawn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/black_pawn_lady.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/black_pawn_lady.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/white_pawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/white_pawn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/images/white_pawn_lady.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/white_pawn_lady.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_pawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/black_pawn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_pawn_lady.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/black_pawn_lady.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_pawn.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/white_pawn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_pawn_lady.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/white_pawn_lady.png" afterDir="false" />
@@ -31,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Checkers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3881">
-              <caret line="232" column="17" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
+            <state relative-caret-position="-746">
+              <caret line="329" column="17" selection-start-line="329" selection-start-column="17" selection-end-line="329" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,8 +86,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,17 +174,21 @@
       <workItem from="1558034482868" duration="584000" />
       <workItem from="1558636285471" duration="8409000" />
       <workItem from="1558974433512" duration="374000" />
-      <workItem from="1558975501996" duration="7905000" />
+      <workItem from="1558975501996" duration="9994000" />
+      <workItem from="1559061984065" duration="79000" />
+      <workItem from="1559067514802" duration="3262000" />
+      <workItem from="1559238813770" duration="1338000" />
+      <workItem from="1559241713701" duration="5443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18357000" />
+    <option name="totallyTimeSpent" value="30568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2685325" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -208,8 +227,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/kodilla/test.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Checkers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3881">
-          <caret line="232" column="17" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
+        <state relative-caret-position="-746">
+          <caret line="329" column="17" selection-start-line="329" selection-start-column="17" selection-end-line="329" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
