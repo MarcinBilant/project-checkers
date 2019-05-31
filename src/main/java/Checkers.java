@@ -22,6 +22,8 @@ public class Checkers extends Application {
     private Image imageBlackPawnB = new Image("images/black_pawn.png");
     private Image imageBlackPawnW = new Image("images/white_pawn.png");
     private boolean isMoveBlack = false;
+    private int whichColumn;
+    private int whichRow;
     String nameButton;
 
     public static void main(String[] args) {
@@ -63,6 +65,7 @@ public class Checkers extends Application {
         });
         buttonB1.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB1,whichColumn,whichRow);
         });
 
         Button buttonB2 = new Button();
@@ -74,6 +77,7 @@ public class Checkers extends Application {
         });
         buttonB2.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB2,whichColumn,whichRow);
         });
 
         Button buttonB3 = new Button();
@@ -85,6 +89,7 @@ public class Checkers extends Application {
         });
         buttonB3.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB3,whichColumn,whichRow);
         });
 
         Button buttonB4 = new Button();
@@ -96,6 +101,7 @@ public class Checkers extends Application {
         });
         buttonB4.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB4,whichColumn,whichRow);
         });
 
         Button buttonB5 = new Button();
@@ -107,6 +113,7 @@ public class Checkers extends Application {
         });
         buttonB5.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB5,whichColumn,whichRow);
         });
 
         Button buttonB6 = new Button();
@@ -118,6 +125,7 @@ public class Checkers extends Application {
         });
         buttonB6.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB6,whichColumn,whichRow);
         });
 
         Button buttonB7 = new Button();
@@ -129,6 +137,7 @@ public class Checkers extends Application {
         });
         buttonB7.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB7,whichColumn,whichRow);
         });
 
         Button buttonB8 = new Button();
@@ -140,6 +149,7 @@ public class Checkers extends Application {
         });
         buttonB8.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB8,whichColumn,whichRow);
         });
 
         Button buttonB9 = new Button();
@@ -151,6 +161,7 @@ public class Checkers extends Application {
         });
         buttonB9.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB9,whichColumn,whichRow);
         });
 
         Button buttonB10 = new Button();
@@ -162,6 +173,7 @@ public class Checkers extends Application {
         });
         buttonB10.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB10,whichColumn,whichRow);
         });
 
         Button buttonB11 = new Button();
@@ -173,6 +185,7 @@ public class Checkers extends Application {
         });
         buttonB11.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB11,whichColumn,whichRow);
         });
 
         Button buttonB12 = new Button();
@@ -184,6 +197,7 @@ public class Checkers extends Application {
         });
         buttonB12.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonB12,whichColumn,whichRow);
         });
 
         grid.add(buttonB1, 1, 1);
@@ -208,6 +222,7 @@ public class Checkers extends Application {
         });
         buttonW1.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW1,whichColumn,whichRow);
         });
 
         Button buttonW2 = new Button();
@@ -219,6 +234,7 @@ public class Checkers extends Application {
         });
         buttonW2.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW2,whichColumn,whichRow);
         });
 
         Button buttonW3 = new Button();
@@ -230,6 +246,7 @@ public class Checkers extends Application {
         });
         buttonW3.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW3,whichColumn,whichRow);
         });
 
         Button buttonW4 = new Button();
@@ -241,6 +258,7 @@ public class Checkers extends Application {
         });
         buttonW4.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW4,whichColumn,whichRow);
         });
 
         Button buttonW5 = new Button();
@@ -252,6 +270,7 @@ public class Checkers extends Application {
         });
         buttonW5.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW5,whichColumn,whichRow);
         });
 
         Button buttonW6 = new Button();
@@ -263,6 +282,7 @@ public class Checkers extends Application {
         });
         buttonW6.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW6,whichColumn,whichRow);
         });
 
         Button buttonW7 = new Button();
@@ -274,6 +294,7 @@ public class Checkers extends Application {
         });
         buttonW7.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW7,whichColumn,whichRow);
         });
 
         Button buttonW8 = new Button();
@@ -285,6 +306,7 @@ public class Checkers extends Application {
         });
         buttonW8.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW8,whichColumn,whichRow);
         });
 
         Button buttonW9 = new Button();
@@ -296,6 +318,7 @@ public class Checkers extends Application {
         });
         buttonW9.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW9,whichColumn,whichRow);
         });
 
         Button buttonW10 = new Button();
@@ -307,6 +330,7 @@ public class Checkers extends Application {
         });
         buttonW10.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW10,whichColumn,whichRow);
         });
 
         Button buttonW11 = new Button();
@@ -318,6 +342,7 @@ public class Checkers extends Application {
         });
         buttonW11.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW11,whichColumn,whichRow);
         });
 
         Button buttonW12 = new Button();
@@ -329,6 +354,8 @@ public class Checkers extends Application {
         });
         buttonW12.setOnMouseDragged((event) -> {
             mouseMoved(event);
+            grid.add(buttonW12,whichColumn,whichRow);
+
         });
 
 
@@ -373,17 +400,16 @@ public class Checkers extends Application {
     }
 
 
+
     public void mouseMoved(MouseEvent event) {
         double sceneX;
         double sceneY;
-        int whichColumn;
-        int whichRow;
         sceneX = event.getSceneX();
         sceneY = event.getSceneY();
         System.out.println("X: " + sceneX + "Y " + sceneY);
         whichColumn = (int) sceneX / 60;
         whichRow = (int) sceneY / 60;
-        System.out.println("Column " + whichColumn + "row " + whichRow);
+        //System.out.println("Column " + whichColumn + "row " + whichRow);
 
     }
 
