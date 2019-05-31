@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -354,8 +355,14 @@ public class Checkers extends Application {
         });
         buttonW12.setOnMouseDragged((event) -> {
             mouseMoved(event);
-            grid.add(buttonW12,whichColumn,whichRow);
+            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
+            if (isEmpty == null) {
+                grid.add(buttonW12, whichColumn, whichRow);
+            }
+            else {
+                System.out.println("W12");
 
+            }
         });
 
 
@@ -406,11 +413,23 @@ public class Checkers extends Application {
         double sceneY;
         sceneX = event.getSceneX();
         sceneY = event.getSceneY();
-        System.out.println("X: " + sceneX + "Y " + sceneY);
+        //int gridPaneColumn;
+        //int gridPaneRow;
+        //System.out.println("X: " + sceneX + "Y " + sceneY);
         whichColumn = (int) sceneX / 60;
         whichRow = (int) sceneY / 60;
-        //System.out.println("Column " + whichColumn + "row " + whichRow);
 
+
+        System.out.println("Column " + whichColumn + "row " + whichRow);
+    }
+
+    private Node getNodeFromGridPane(GridPane grid, int col, int row) {
+        for (Node node : grid.getChildren()) {
+            if (GridPane.getColumnIndex(node) == col && GridPane.getRowIndex(node) == row) {
+                return node;
+            }
+        }
+        return null;
     }
 
 }
