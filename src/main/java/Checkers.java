@@ -17,6 +17,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class Checkers extends Application {
 
@@ -29,6 +30,11 @@ public class Checkers extends Application {
     private int whichRow;
     private int column;
     private int row;
+    private int moveComputerLeftRight;
+    private int whichComputerPawn;
+    private String whichButton;
+    private int whichColumnComputer;
+    private int whichRowComputer;
     String nameButton;
 
     public static void main(String[] args) {
@@ -62,411 +68,162 @@ public class Checkers extends Application {
         //grid.getRowConstraints().add(new RowConstraints(120));
 
         Button buttonB1 = new Button();
-        buttonB1.setMaxSize(50, 50);
-        buttonB1.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB1.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB1);
         buttonB1.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB1.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB1,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB1);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonB1);
         });
 
         buttonB1.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB1, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB1,column,row);
-            }
-
-            else  {
-                grid.add(buttonB1,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB1);
         });
 
         Button buttonB2 = new Button();
-        buttonB2.setMaxSize(50, 50);
-        buttonB2.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB2.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB2);
         buttonB2.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB2.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB2,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB2);
-            column = parameters.getColumn();
-            row = parameters.getRow();
 
+            mouseMovedPressed(event, buttonB2);
         });
 
         buttonB2.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB2, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB2,column,row);
-            }
-
-            else  {
-                grid.add(buttonB2,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB2);
         });
 
         Button buttonB3 = new Button();
-        buttonB3.setMaxSize(50, 50);
-        buttonB3.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB3.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB3);
         buttonB3.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB3.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB3,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB3);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+           mouseMovedPressed(event, buttonB3);
         });
 
         buttonB3.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB3, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB3,column,row);
-            }
-
-            else  {
-                grid.add(buttonB3,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB3);
         });
 
         Button buttonB4 = new Button();
-        buttonB4.setMaxSize(50, 50);
-        buttonB4.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB4.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB4);
         buttonB1.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB4.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB4,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB4);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+           mouseMovedPressed(event, buttonB4);
         });
 
         buttonB4.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB4, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB4,column,row);
-            }
-
-            else  {
-                grid.add(buttonB4,column,row);
-
-            }
+           mouseMovedReleased(event,grid,buttonB4);
         });
 
         Button buttonB5 = new Button();
-        buttonB5.setMaxSize(50, 50);
-        buttonB5.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB5.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
-        buttonB5.setOnAction((e) -> {
-            makeMove(e, true);
-        });
+        setGraphicsBlack(buttonB5);
         buttonB5.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB5,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB5);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonB1);
         });
 
         buttonB5.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB5, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB5,column,row);
-            }
-
-            else  {
-                grid.add(buttonB5,column,row);
-
-            }
+            mouseMovedReleased(event,grid,buttonB5);
         });
 
         Button buttonB6 = new Button();
-        buttonB6.setMaxSize(50, 50);
-        buttonB6.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB6.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB6);
         buttonB6.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB6.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB6,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB6);
-            column = parameters.getColumn();
-            row = parameters.getRow();
+            mouseMovedPressed(event, buttonB6);
 
         });
 
         buttonB6.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB6, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB6,column,row);
-            }
-
-            else  {
-                grid.add(buttonB6,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB6);
         });
 
         Button buttonB7 = new Button();
-        buttonB7.setMaxSize(50, 50);
-        buttonB7.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB7.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+       setGraphicsBlack(buttonB7);
         buttonB7.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB7.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB7,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB7);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonB7);
         });
 
         buttonB7.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB7, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB7,column,row);
-            }
-
-            else  {
-                grid.add(buttonB7,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB7);
         });
 
         Button buttonB8 = new Button();
-        buttonB8.setMaxSize(50, 50);
-        buttonB8.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB8.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB8);
         buttonB8.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB8.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB8,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB8);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonB8);
         });
 
         buttonB8.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB8, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB8,column,row);
-            }
-
-            else  {
-                grid.add(buttonB8,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB8);
         });
 
         Button buttonB9 = new Button();
-        buttonB9.setMaxSize(50, 50);
-        buttonB9.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB9.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB9);
         buttonB9.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB9.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB9,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB9);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonB9);
         });
 
         buttonB9.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB9, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB9,column,row);
-            }
-
-            else  {
-                grid.add(buttonB9,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB9);
         });
 
         Button buttonB10 = new Button();
-        buttonB10.setMaxSize(50, 50);
-        buttonB10.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB10.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB10);
         buttonB10.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB10.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB10,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB10);
-            column = parameters.getColumn();
-            row = parameters.getRow();
+
+            mouseMovedPressed(event, buttonB10);
 
         });
 
         buttonB10.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB10, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB10,column,row);
-            }
-
-            else  {
-                grid.add(buttonB10,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB10);
         });
 
         Button buttonB11 = new Button();
-        buttonB11.setMaxSize(50, 50);
-        buttonB11.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB11.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+       setGraphicsBlack(buttonB11);
         buttonB11.setOnAction((e) -> {
             makeMove(e, true);
         });
         buttonB11.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB11,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB11);
-            column = parameters.getColumn();
-            row = parameters.getRow();
+            mouseMovedPressed(event, buttonB11);
 
         });
 
         buttonB11.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB11, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB11,column,row);
-            }
-
-            else  {
-                grid.add(buttonB11,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB11);
         });
 
         Button buttonB12 = new Button();
-        buttonB12.setMaxSize(50, 50);
-        buttonB12.setGraphic(new ImageView(imageBlackPawnB));
-        buttonB12.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsBlack(buttonB12);
         buttonB12.setOnAction((e) -> {
             makeMove(e, true);
         });
-        buttonB12.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonB12,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonB12);
-            column = parameters.getColumn();
-            row = parameters.getRow();
 
+        buttonB12.setOnMousePressed((event )->  {
+            mouseMovedPressed(event, buttonB12);
         });
 
         buttonB12.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonB12, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonB12,column,row);
-            }
-
-            else  {
-                grid.add(buttonB12,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonB12);
         });
 
         grid.add(buttonB1, 1, 1);
@@ -483,418 +240,193 @@ public class Checkers extends Application {
         grid.add(buttonB12, 7, 3);
 
         Button buttonW1 = new Button();
-        buttonW1.setMaxSize(50, 50);
-        buttonW1.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW1.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW1);
         buttonW1.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW1.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW1,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW1);
-            column = parameters.getColumn();
-            row = parameters.getRow();
 
+            mouseMovedPressed(event, buttonW1);
         });
 
         buttonW1.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW1, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW1,column,row);
-            }
-
-            else  {
-                grid.add(buttonW1,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW1);
         });
 
         Button buttonW2 = new Button();
-        buttonW2.setMaxSize(50, 50);
-        buttonW2.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW2.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW2);
         buttonW2.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW2.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW2,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW2);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW2);
         });
 
         buttonW2.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW2, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW2,column,row);
-            }
-
-            else  {
-                grid.add(buttonW2,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW2);
         });
 
         Button buttonW3 = new Button();
-        buttonW3.setMaxSize(50, 50);
-        buttonW3.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW3.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW3);
         buttonW3.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW3.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW3,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW3);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW3);
         });
 
         buttonW3.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW3, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW3,column,row);
-            }
-
-            else  {
-                grid.add(buttonW3,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW3);
         });
 
         Button buttonW4 = new Button();
-        buttonW4.setMaxSize(50, 50);
-        buttonW4.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW4.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+       setGraphicsWhite(buttonW4);
         buttonW4.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW4.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW4,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW4);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW4);
         });
 
         buttonW4.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW4, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW4,column,row);
-            }
-
-            else  {
-                grid.add(buttonW4,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW4);
         });
 
         Button buttonW5 = new Button();
-        buttonW5.setMaxSize(50, 50);
-        buttonW5.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW5.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+       setGraphicsWhite(buttonW5);
         buttonW5.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW5.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW5,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW5);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW5);
         });
 
         buttonW5.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW5, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW5,column,row);
-            }
-
-            else  {
-                grid.add(buttonW5,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW5);
         });
 
         Button buttonW6 = new Button();
-        buttonW6.setMaxSize(50, 50);
-        buttonW6.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW6.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+       setGraphicsWhite(buttonW6);
         buttonW6.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW6.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW6,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW6);
-            column = parameters.getColumn();
-            row = parameters.getRow();
+            mouseMovedPressed(event, buttonW6);
 
         });
 
         buttonW6.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW6, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW6,column,row);
-            }
-
-            else  {
-                grid.add(buttonW6,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW6);
         });
 
         Button buttonW7 = new Button();
-        buttonW7.setMaxSize(50, 50);
-        buttonW7.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW7.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW7);
         buttonW7.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW7.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW7,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW7);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW7);
         });
 
         buttonW7.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW7, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW7,column,row);
-            }
-
-            else  {
-                grid.add(buttonW7,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW7);
         });
 
         Button buttonW8 = new Button();
-        buttonW8.setMaxSize(50, 50);
-        buttonW8.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW8.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW8);
         buttonW8.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW8.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW8,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW8);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW8);
         });
 
         buttonW8.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW8, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW8,column,row);
-            }
-
-            else  {
-                grid.add(buttonW8,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW8);
         });
 
         Button buttonW9 = new Button();
-        buttonW9.setMaxSize(50, 50);
-        buttonW9.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW9.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW9);
         buttonW9.setOnAction((e) -> {
             makeMove(e, false);
         });
         buttonW9.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW9,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW9);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW9);
         });
 
         buttonW9.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW9, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW9,column,row);
-            }
-
-            else  {
-                grid.add(buttonW9,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW9);
         });
 
         Button buttonW10 = new Button();
-        buttonW10.setMaxSize(50, 50);
-        buttonW10.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW10.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+       setGraphicsWhite(buttonW10);
         buttonW10.setOnAction((e) -> {
             makeMove(e, false);
         });
 
         buttonW10.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW10,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW10);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW10);
         });
 
         buttonW10.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW10, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW10,column,row);
-            }
-
-            else  {
-                grid.add(buttonW10,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW10);
         });
 
         Button buttonW11 = new Button();
-        buttonW11.setMaxSize(50, 50);
-        buttonW11.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW11.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW11);
         buttonW11.setOnAction((e) -> {
             makeMove(e, false);
         });
 
         buttonW11.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW11,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW11);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW11);
         });
 
         buttonW11.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW11, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW11,column,row);
-            }
-
-            else  {
-                grid.add(buttonW11,column,row);
-
-            }
+            mouseMovedReleased(event, grid, buttonW11);
         });
 
         Button buttonW12 = new Button();
-        buttonW12.setMaxSize(50, 50);
-        buttonW12.setGraphic(new ImageView(imageBlackPawnW));
-        buttonW12.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+        setGraphicsWhite(buttonW12);
         buttonW12.setOnAction((e) -> {
+            System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
             makeMove(e, false);
+            System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
+            moveComputer();
+                whichColumnComputer = (int) buttonB11.getLayoutX() / 60;
+                whichRowComputer = (int) buttonB11.getLayoutY() / 60;
+                System.out.println(whichColumnComputer + "  " + whichRowComputer);
+
+                Node isEmpty = getNodeFromGridPane(grid, whichColumnComputer - 1, whichRowComputer + 1);
+                if (isEmpty == null && whichColumn <= 8 && whichRow <= 8 && whichColumn > 0 && whichRow > 0
+                        && whichComputerPawn == 11 && moveComputerLeftRight == 0) {
+                    grid.add(buttonB11, whichColumnComputer - 1, whichRowComputer + 1);
+
+
+                } else if (isEmpty == null && whichColumn <= 8 && whichRow <= 8 && whichColumn > 0 && whichRow > 0
+                        && whichComputerPawn == 11 && moveComputerLeftRight == 1) {
+                    grid.add(buttonB11, whichColumnComputer + 1, whichRowComputer + 1);
+
+
+                }
+
+                /*if (whichComputerPawn == 1 && moveComputerLeftRight == 0) {
+                    whichColumnComputer = (int)buttonB1.getLayoutX()/60;
+                    whichRowComputer = (int)buttonB1.getLayoutY()/60;
+                    grid.add(buttonB1, whichColumnComputer-1, whichRowComputer+1);
+
+                }*/
+
+
         });
 
         buttonW12.setOnMousePressed((event )->  {
-            mouseMoved(event);
-            ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
-            HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
-            buttonParametersHashMap.put(buttonW12,buttonParameters);
-            ButtonParameters parameters = buttonParametersHashMap.get(buttonW12);
-            column = parameters.getColumn();
-            row = parameters.getRow();
-
+            mouseMovedPressed(event, buttonW12);
         });
 
-        buttonW12.setOnMouseReleased((event) -> {
-            mouseMoved(event);
-            Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
-            if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-                grid.add(buttonW12, whichColumn, whichRow);
-            }
-            else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
-                grid.add(buttonW12,column,row);
-            }
-
-            else  {
-                grid.add(buttonW12,column,row);
-
-            }
+        buttonW12.setOnMouseReleased(event -> {
+            mouseMovedReleased(event, grid, buttonW12);
         });
-
-
-
 
 
         grid.add(buttonW1, 2, 6);
@@ -914,6 +446,7 @@ public class Checkers extends Application {
         Scene scene = new Scene(grid, 725, 610, Color.BLACK);
 
 
+
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -924,17 +457,35 @@ public class Checkers extends Application {
 
 
         if (!isBlackPawn && !isMoveBlack) {
-            System.out.println("Wykonuję ruch białymi");
+            System.out.println("Wykonał ruch białymi");
 
             isMoveBlack = true;
         } else if (isBlackPawn && isMoveBlack) {
-            System.out.println("Wykonuje ruch czarnymi");
+            System.out.println("Wykonał ruch czarnymi");
             isMoveBlack = false;
         } else {
             System.out.println("Błędny pionek");
         }
     }
 
+
+    public void moveComputer() {
+
+        whichComputerPawn = 11;
+        moveComputerLeftRight = 1;
+
+        if (isMoveBlack) {
+            Random random = new Random();
+
+            //whichComputerPawn = random.nextInt(12)+1;
+            //moveComputerLeftRight = random.nextInt(2);
+
+            //whichColumnComputer = (int)button.getLayoutX()/60;
+            //whichRowComputer = (int)button.getLayoutY()/60;
+        }
+
+    }
+    Button button = new Button();
     public void mouseMoved(MouseEvent event) {
         double sceneX;
         double sceneY;
@@ -942,11 +493,65 @@ public class Checkers extends Application {
         sceneY = event.getSceneY();
         whichColumn = (int) sceneX / 60;
         whichRow = (int) sceneY / 60;
+
+
+    }
+
+    public void mouseMovedReleased(MouseEvent event,GridPane grid, Button button) {
+
+        double sceneX;
+        double sceneY;
+        sceneX = event.getSceneX();
+        sceneY = event.getSceneY();
+        whichColumn = (int) sceneX / 60;
+        whichRow = (int) sceneY / 60;
+
+        Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
+        if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
+            grid.add(button, whichColumn, whichRow);
+        }
+        else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
+            grid.add(button,column,row);
+        }
+
+        else  {
+            grid.add(button,column,row);
+
+        }
+
+    }
+
+    public void mouseMovedPressed(MouseEvent event, Button button) {
+        double sceneX;
+        double sceneY;
+        sceneX = event.getSceneX();
+        sceneY = event.getSceneY();
+        whichColumn = (int) sceneX / 60;
+        whichRow = (int) sceneY / 60;
+        ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
+        HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
+        buttonParametersHashMap.put(button,buttonParameters);
+        ButtonParameters parameters = buttonParametersHashMap.get(button);
+        column = parameters.getColumn();
+        row = parameters.getRow();
+    }
+
+    public void setGraphicsBlack(Button button) {
+        button.setMaxSize(50, 50);
+        button.setGraphic(new ImageView(imageBlackPawnB));
+        button.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
+    }
+
+    public void setGraphicsWhite(Button button) {
+        button.setMaxSize(50, 50);
+        button.setGraphic(new ImageView(imageBlackPawnW));
+        button.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
     }
 
     private Node getNodeFromGridPane(GridPane grid, int col, int row) {
         for (Node node : grid.getChildren()) {
             if (GridPane.getColumnIndex(node) == col && GridPane.getRowIndex(node) == row) {
+
                 return node;
             }
         }
