@@ -475,6 +475,82 @@ public class Checkers extends Application {
 
         buttonW12.setOnMouseReleased(event -> {
             mouseMovedReleased(event, grid, buttonW12);
+            moveComputerRandom();
+            System.out.println("ComputerPawn   " + whichComputerPawn + " ComputerLeftRight  "  + moveComputerLeftRight );
+            if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB1);
+            }
+            if (whichComputerPawn == 1 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB1);
+            }
+            if (whichComputerPawn == 2 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB2);
+            }
+            if (whichComputerPawn == 2 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB2);
+            }
+            if (whichComputerPawn == 3 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB3);
+            }
+            if (whichComputerPawn == 3 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB3);
+            }
+            if (whichComputerPawn == 4 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB4);
+            }
+            if (whichComputerPawn == 4 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB4);
+            }
+            if (whichComputerPawn == 5 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB5);
+            }
+            if (whichComputerPawn == 5 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB5);
+            }
+            if (whichComputerPawn == 6 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB6);
+            }
+            if (whichComputerPawn == 6 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB6);
+            }
+            if (whichComputerPawn == 7 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB7);
+            }
+            if (whichComputerPawn == 7 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB7);
+            }
+            if (whichComputerPawn == 8 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB8);
+            }
+            if (whichComputerPawn == 8 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB8);
+            }
+            if (whichComputerPawn == 9 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB9);
+            }
+            if (whichComputerPawn == 9 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB9);
+            }
+            if (whichComputerPawn == 10 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB10);
+            }
+            if (whichComputerPawn == 10 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB10);
+            }
+
+            if (whichComputerPawn == 11 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB11);
+            }
+            if (whichComputerPawn == 11 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB11);
+            }
+            if (whichComputerPawn == 12 && moveComputerLeftRight == 0){
+                moveComputerLeft(grid, buttonB12);
+            }
+            if (whichComputerPawn == 12 && moveComputerLeftRight == 1){
+                moveComputerRight(grid, buttonB12);
+            }
+
         });
 
 
