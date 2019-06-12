@@ -1,5 +1,6 @@
 
 import com.kodilla.ButtonParameters;
+import com.kodilla.PawnFactory;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -66,6 +67,11 @@ public class Checkers extends Application {
 
         //grid.getColumnConstraints().add(new ColumnConstraints(120));
         //grid.getRowConstraints().add(new RowConstraints(120));
+        List<Button> blackButtons = PawnFactory.createButtons(12,true);
+        List<Button> whiteButtons = PawnFactory.createButtons(12,false);
+        blackButtons.forEach(button-> buttonSetAction(button, grid));
+        whiteButtons.forEach(button-> buttonSetAction(button, grid));
+
 
         Button buttonB1 = new Button();
         setGraphicsBlack(buttonB1);
@@ -715,6 +721,19 @@ public class Checkers extends Application {
             }
         }
         return null;
+    }
+    private void buttonSetAction(Button button, GridPane grid) {
+        button.setOnAction((e) -> {
+            makeMove(e, true);
+        });
+        button.setOnMousePressed((event) -> {
+            mouseMovedPressed(event, button);
+        });
+
+        button.setOnMouseReleased((event) -> {
+            mouseMovedReleased(event, grid, button);
+        });
+
     }
 
 }
