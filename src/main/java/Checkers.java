@@ -1,8 +1,10 @@
 
 import com.kodilla.ButtonParameters;
+import com.kodilla.MoveResult;
 import com.kodilla.PawnFactory;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -65,172 +67,27 @@ public class Checkers extends Application {
         }
 
 
-        //grid.getColumnConstraints().add(new ColumnConstraints(120));
-        //grid.getRowConstraints().add(new RowConstraints(120));
+        grid.getColumnConstraints().add(new ColumnConstraints(120));
+        grid.getRowConstraints().add(new RowConstraints(120));
         List<Button> blackButtons = PawnFactory.createButtons(12,true);
         List<Button> whiteButtons = PawnFactory.createButtons(12,false);
         blackButtons.forEach(button-> buttonSetAction(button, grid));
         whiteButtons.forEach(button-> buttonSetAction(button, grid));
 
 
-        Button buttonB1 = new Button();
-        setGraphicsBlack(buttonB1);
-        buttonB1.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB1.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB1);
-        });
+        Button buttonB1 = blackButtons.get(0);
+        Button buttonB2 = blackButtons.get(1);
+        Button buttonB3 = blackButtons.get(2);
+        Button buttonB4 = blackButtons.get(3);
+        Button buttonB5 = blackButtons.get(4);
+        Button buttonB6 = blackButtons.get(5);
+        Button buttonB7 = blackButtons.get(6);
+        Button buttonB8 = blackButtons.get(7);
+        Button buttonB9 = blackButtons.get(8);
+        Button buttonB10 = blackButtons.get(9);
+        Button buttonB11 = blackButtons.get(10);
+        Button buttonB12 = blackButtons.get(11);
 
-        buttonB1.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB1);
-        });
-
-        Button buttonB2 = new Button();
-        setGraphicsBlack(buttonB2);
-        buttonB2.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB2.setOnMousePressed((event) -> {
-
-            mouseMovedPressed(event, buttonB2);
-        });
-
-        buttonB2.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB2);
-        });
-
-        Button buttonB3 = new Button();
-        setGraphicsBlack(buttonB3);
-        buttonB3.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB3.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB3);
-        });
-
-        buttonB3.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB3);
-        });
-
-        Button buttonB4 = new Button();
-        setGraphicsBlack(buttonB4);
-        buttonB1.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB4.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB4);
-        });
-
-        buttonB4.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB4);
-        });
-
-        Button buttonB5 = new Button();
-        setGraphicsBlack(buttonB5);
-        buttonB5.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB1);
-        });
-
-        buttonB5.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB5);
-        });
-
-        Button buttonB6 = new Button();
-        setGraphicsBlack(buttonB6);
-        buttonB6.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB6.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB6);
-
-        });
-
-        buttonB6.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB6);
-        });
-
-        Button buttonB7 = new Button();
-        setGraphicsBlack(buttonB7);
-        buttonB7.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB7.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB7);
-        });
-
-        buttonB7.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB7);
-        });
-
-        Button buttonB8 = new Button();
-        setGraphicsBlack(buttonB8);
-        buttonB8.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB8.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB8);
-        });
-
-        buttonB8.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB8);
-        });
-
-        Button buttonB9 = new Button();
-        setGraphicsBlack(buttonB9);
-        buttonB9.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB9.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB9);
-        });
-
-        buttonB9.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB9);
-        });
-
-        Button buttonB10 = new Button();
-        setGraphicsBlack(buttonB10);
-        buttonB10.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB10.setOnMousePressed((event) -> {
-
-            mouseMovedPressed(event, buttonB10);
-
-        });
-
-        buttonB10.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB10);
-        });
-
-        Button buttonB11 = new Button();
-        setGraphicsBlack(buttonB11);
-        buttonB11.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-        buttonB11.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB11);
-
-        });
-
-        buttonB11.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB11);
-        });
-
-        Button buttonB12 = new Button();
-        setGraphicsBlack(buttonB12);
-        buttonB12.setOnAction((e) -> {
-            makeMove(e, true);
-        });
-
-        buttonB12.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonB12);
-        });
-
-        buttonB12.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonB12);
-        });
 
         grid.add(buttonB1, 1, 1);
         grid.add(buttonB2, 3, 1);
@@ -245,154 +102,19 @@ public class Checkers extends Application {
         grid.add(buttonB11, 5, 3);
         grid.add(buttonB12, 7, 3);
 
-        Button buttonW1 = new Button();
-        setGraphicsWhite(buttonW1);
-        buttonW1.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW1.setOnMousePressed((event) -> {
+        Button buttonW1 = whiteButtons.get(0);
+        Button buttonW2 = whiteButtons.get(1);
+        Button buttonW3 = whiteButtons.get(2);
+        Button buttonW4 = whiteButtons.get(3);
+        Button buttonW5 = whiteButtons.get(4);
+        Button buttonW6 = whiteButtons.get(5);
+        Button buttonW7 = whiteButtons.get(6);
+        Button buttonW8 = whiteButtons.get(7);
+        Button buttonW9 = whiteButtons.get(8);
+        Button buttonW10 = whiteButtons.get(9);
+        Button buttonW11 = whiteButtons.get(10);
+        Button buttonW12 = whiteButtons.get(11);
 
-            mouseMovedPressed(event, buttonW1);
-        });
-
-        buttonW1.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW1);
-        });
-
-        Button buttonW2 = new Button();
-        setGraphicsWhite(buttonW2);
-        buttonW2.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW2.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW2);
-        });
-
-        buttonW2.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW2);
-        });
-
-        Button buttonW3 = new Button();
-        setGraphicsWhite(buttonW3);
-        buttonW3.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW3.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW3);
-        });
-
-        buttonW3.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW3);
-        });
-
-        Button buttonW4 = new Button();
-        setGraphicsWhite(buttonW4);
-        buttonW4.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW4.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW4);
-        });
-
-        buttonW4.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW4);
-        });
-
-        Button buttonW5 = new Button();
-        setGraphicsWhite(buttonW5);
-        buttonW5.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW5.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW5);
-        });
-
-        buttonW5.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW5);
-        });
-
-        Button buttonW6 = new Button();
-        setGraphicsWhite(buttonW6);
-        buttonW6.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW6.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW6);
-
-        });
-
-        buttonW6.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW6);
-        });
-
-        Button buttonW7 = new Button();
-        setGraphicsWhite(buttonW7);
-        buttonW7.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW7.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW7);
-        });
-
-        buttonW7.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW7);
-        });
-
-        Button buttonW8 = new Button();
-        setGraphicsWhite(buttonW8);
-        buttonW8.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW8.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW8);
-        });
-
-        buttonW8.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW8);
-        });
-
-        Button buttonW9 = new Button();
-        setGraphicsWhite(buttonW9);
-        buttonW9.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-        buttonW9.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW9);
-        });
-
-        buttonW9.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW9);
-        });
-
-        Button buttonW10 = new Button();
-        setGraphicsWhite(buttonW10);
-        buttonW10.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-
-        buttonW10.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW10);
-        });
-
-        buttonW10.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW10);
-        });
-
-        Button buttonW11 = new Button();
-        setGraphicsWhite(buttonW11);
-        buttonW11.setOnAction((e) -> {
-            makeMove(e, false);
-        });
-
-        buttonW11.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW11);
-        });
-
-        buttonW11.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, buttonW11);
-        });
-
-        Button buttonW12 = new Button();
         setGraphicsWhite(buttonW12);
         buttonW12.setOnAction((e) -> {
             System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
@@ -480,7 +202,7 @@ public class Checkers extends Application {
         });
 
         buttonW12.setOnMouseReleased(event -> {
-            mouseMovedReleased(event, grid, buttonW12);
+            mouseMovedReleased(event, grid, buttonW12,false);
             moveComputerRandom();
             System.out.println("ComputerPawn   " + whichComputerPawn + " ComputerLeftRight  "  + moveComputerLeftRight );
             if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
@@ -583,7 +305,7 @@ public class Checkers extends Application {
 
     }
 
-    public void makeMove(ActionEvent e, boolean isBlackPawn) {
+    public void makeMove(Event even, boolean isBlackPawn) {
 
 
         if (!isBlackPawn && !isMoveBlack) {
@@ -611,7 +333,6 @@ public class Checkers extends Application {
            moveComputerLeftRight = random.nextInt(2);
 
         }
-
     }
 
     public void moveComputerLeft(GridPane grid, Button button) {
@@ -644,6 +365,84 @@ public class Checkers extends Application {
         }
     }
 
+    public void moveComputer(GridPane grid, Button button) {
+        if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 1 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 2 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 2 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 3 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 3 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 4 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 4 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 5 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 5 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 6 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 6 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 7 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 7 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 8 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 8 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 9 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 9 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 10 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 10 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+
+        if (whichComputerPawn == 11 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 11 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+        if (whichComputerPawn == 12 && moveComputerLeftRight == 0){
+            moveComputerLeft(grid, button);
+        }
+        if (whichComputerPawn == 12 && moveComputerLeftRight == 1){
+            moveComputerRight(grid, button);
+        }
+
+
+    }
+
 
     Button button = new Button();
     public void mouseMoved(MouseEvent event) {
@@ -657,7 +456,7 @@ public class Checkers extends Application {
 
     }
 
-    public void mouseMovedReleased(MouseEvent event,GridPane grid, Button button) {
+    public void mouseMovedReleased(MouseEvent event,GridPane grid, Button button, boolean isBlackPawn) {
 
         double sceneX;
         double sceneY;
@@ -665,6 +464,17 @@ public class Checkers extends Application {
         sceneY = event.getSceneY();
         whichColumn = (int) sceneX / 60;
         whichRow = (int) sceneY / 60;
+
+        if (!isBlackPawn && !isMoveBlack) {
+            System.out.println("Wykonał ruch białymi");
+
+            isMoveBlack = true;
+        } else if (isBlackPawn && isMoveBlack) {
+            System.out.println("Wykonał ruch czarnymi");
+            isMoveBlack = false;
+        } else {
+            System.out.println("Błędny pionek");
+        }
 
         Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
         if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
@@ -683,6 +493,9 @@ public class Checkers extends Application {
             grid.add(button,column,row);
 
         }
+
+
+
 
     }
 
@@ -723,15 +536,15 @@ public class Checkers extends Application {
         return null;
     }
     private void buttonSetAction(Button button, GridPane grid) {
-        button.setOnAction((e) -> {
-            makeMove(e, true);
-        });
+       // button.setOnAction((e) -> {
+        //    makeMove(e, true);
+       // });
         button.setOnMousePressed((event) -> {
             mouseMovedPressed(event, button);
         });
 
         button.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, button);
+            mouseMovedReleased(event, grid, button,true);
         });
 
     }
