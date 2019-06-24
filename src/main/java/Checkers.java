@@ -1,4 +1,3 @@
-
 import com.kodilla.ButtonParameters;
 import com.kodilla.MoveResult;
 import com.kodilla.PawnFactory;
@@ -24,6 +23,9 @@ import java.util.Random;
 
 public class Checkers extends Application {
 
+    private List<Button> blackButtons = PawnFactory.createButtons(12,true);
+    private List<Button> whiteButtons = PawnFactory.createButtons(12,false);
+
     private Image imageback = new Image("images/board.jpg");
     private ImageView imageWhitePawn = new ImageView("images/white_pawn.png");
     private Image imageBlackPawnB = new Image("images/black_pawn.png");
@@ -39,6 +41,7 @@ public class Checkers extends Application {
     private int whichColumnComputer;
     private int whichRowComputer;
     String nameButton;
+    private boolean noMovePawn;
 
     public static void main(String[] args) {
         launch(args);
@@ -69,10 +72,9 @@ public class Checkers extends Application {
 
         grid.getColumnConstraints().add(new ColumnConstraints(120));
         grid.getRowConstraints().add(new RowConstraints(120));
-        List<Button> blackButtons = PawnFactory.createButtons(12,true);
-        List<Button> whiteButtons = PawnFactory.createButtons(12,false);
-        blackButtons.forEach(button-> buttonSetAction(button, grid));
-        whiteButtons.forEach(button-> buttonSetAction(button, grid));
+
+        blackButtons.forEach(button-> buttonSetActionBlack(button, grid, true));
+        whiteButtons.forEach(button-> buttonSetActionWhite(button, grid, false));
 
 
         Button buttonB1 = blackButtons.get(0);
@@ -115,173 +117,6 @@ public class Checkers extends Application {
         Button buttonW11 = whiteButtons.get(10);
         Button buttonW12 = whiteButtons.get(11);
 
-        setGraphicsWhite(buttonW12);
-        buttonW12.setOnAction((e) -> {
-            System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
-            makeMove(e, false);
-            System.out.println("wartość zmienne isMoveBlack  " + isMoveBlack);
-            moveComputerRandom();
-            System.out.println("ComputerPawn   " + whichComputerPawn + " ComputerLeftRight  "  + moveComputerLeftRight );
-            if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB1);
-            }
-            if (whichComputerPawn == 1 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB1);
-            }
-            if (whichComputerPawn == 2 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB2);
-            }
-            if (whichComputerPawn == 2 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB2);
-            }
-            if (whichComputerPawn == 3 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB3);
-            }
-            if (whichComputerPawn == 3 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB3);
-            }
-            if (whichComputerPawn == 4 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB4);
-            }
-            if (whichComputerPawn == 4 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB4);
-            }
-            if (whichComputerPawn == 5 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB5);
-            }
-            if (whichComputerPawn == 5 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB5);
-            }
-            if (whichComputerPawn == 6 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB6);
-            }
-            if (whichComputerPawn == 6 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB6);
-            }
-            if (whichComputerPawn == 7 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB7);
-            }
-            if (whichComputerPawn == 7 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB7);
-            }
-            if (whichComputerPawn == 8 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB8);
-            }
-            if (whichComputerPawn == 8 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB8);
-            }
-            if (whichComputerPawn == 9 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB9);
-            }
-            if (whichComputerPawn == 9 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB9);
-            }
-            if (whichComputerPawn == 10 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB10);
-            }
-            if (whichComputerPawn == 10 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB10);
-            }
-
-            if (whichComputerPawn == 11 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB11);
-            }
-            if (whichComputerPawn == 11 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB11);
-            }
-            if (whichComputerPawn == 12 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB12);
-            }
-            if (whichComputerPawn == 12 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB12);
-            }
-        });
-
-        buttonW12.setOnMousePressed((event) -> {
-            mouseMovedPressed(event, buttonW12);
-        });
-
-        buttonW12.setOnMouseReleased(event -> {
-            mouseMovedReleased(event, grid, buttonW12,false);
-            moveComputerRandom();
-            System.out.println("ComputerPawn   " + whichComputerPawn + " ComputerLeftRight  "  + moveComputerLeftRight );
-            if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB1);
-            }
-            if (whichComputerPawn == 1 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB1);
-            }
-            if (whichComputerPawn == 2 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB2);
-            }
-            if (whichComputerPawn == 2 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB2);
-            }
-            if (whichComputerPawn == 3 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB3);
-            }
-            if (whichComputerPawn == 3 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB3);
-            }
-            if (whichComputerPawn == 4 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB4);
-            }
-            if (whichComputerPawn == 4 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB4);
-            }
-            if (whichComputerPawn == 5 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB5);
-            }
-            if (whichComputerPawn == 5 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB5);
-            }
-            if (whichComputerPawn == 6 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB6);
-            }
-            if (whichComputerPawn == 6 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB6);
-            }
-            if (whichComputerPawn == 7 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB7);
-            }
-            if (whichComputerPawn == 7 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB7);
-            }
-            if (whichComputerPawn == 8 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB8);
-            }
-            if (whichComputerPawn == 8 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB8);
-            }
-            if (whichComputerPawn == 9 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB9);
-            }
-            if (whichComputerPawn == 9 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB9);
-            }
-            if (whichComputerPawn == 10 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB10);
-            }
-            if (whichComputerPawn == 10 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB10);
-            }
-
-            if (whichComputerPawn == 11 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB11);
-            }
-            if (whichComputerPawn == 11 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB11);
-            }
-            if (whichComputerPawn == 12 && moveComputerLeftRight == 0){
-                moveComputerLeft(grid, buttonB12);
-            }
-            if (whichComputerPawn == 12 && moveComputerLeftRight == 1){
-                moveComputerRight(grid, buttonB12);
-            }
-
-        });
-
-
         grid.add(buttonW1, 2, 6);
         grid.add(buttonW2, 4, 6);
         grid.add(buttonW3, 6, 6);
@@ -301,11 +136,30 @@ public class Checkers extends Application {
 
         primaryStage.setTitle("Checkers");
         primaryStage.setScene(scene);
+        //primaryStage.setResizable(false);
         primaryStage.show();
 
     }
 
-    public void makeMove(Event even, boolean isBlackPawn) {
+    private void computerMove(GridPane grid) {
+        makeMove( false);
+
+        boolean correctMove = false;
+
+        if (!noMovePawn) {
+
+            do {
+                moveComputerRandom();
+                if (moveComputerLeftRight == 0) {
+                    correctMove = moveComputerLeft(grid, blackButtons.get(whichComputerPawn - 1));
+                } else {
+                    correctMove = moveComputerRight(grid, blackButtons.get(whichComputerPawn - 1));
+                }
+            } while (!correctMove);
+        }
+    }
+
+    public void makeMove(boolean isBlackPawn) {
 
 
         if (!isBlackPawn && !isMoveBlack) {
@@ -323,35 +177,33 @@ public class Checkers extends Application {
 
     public void moveComputerRandom() {
 
-        //whichComputerPawn = 9;
-        //moveComputerLeftRight = 0;
-
         if (isMoveBlack) {
             Random random = new Random();
 
-           whichComputerPawn = random.nextInt(12)+1;
-           moveComputerLeftRight = random.nextInt(2);
+            whichComputerPawn = random.nextInt(12)+1;
+            moveComputerLeftRight = random.nextInt(2);
 
         }
     }
 
-    public void moveComputerLeft(GridPane grid, Button button) {
+    public boolean moveComputerLeft(GridPane grid, Button button) {
 
         whichColumnComputer = (int) button.getLayoutX() / 60;
         whichRowComputer = (int) button.getLayoutY() / 60;
 
         Node isEmptyLeft = getNodeFromGridPane(grid, whichColumnComputer - 1, whichRowComputer + 1);
 
-            if (isEmptyLeft == null && whichColumnComputer - 1 <= 8 && whichRowComputer + 1 <= 8
+        if (isEmptyLeft == null && whichColumnComputer - 1 <= 8 && whichRowComputer + 1 <= 8
                 && whichColumnComputer - 1 > 0 && whichRowComputer + 1 > 0) {
-                grid.getChildren().remove(button);
-                grid.add(button, whichColumnComputer - 1, whichRowComputer + 1);
-            }
+            grid.getChildren().remove(button);
+            grid.add(button, whichColumnComputer - 1, whichRowComputer + 1);
+            return true;
+        }
+        return false;
 
+    }
 
-}
-
-    public void moveComputerRight(GridPane grid, Button button) {
+    public boolean moveComputerRight(GridPane grid, Button button) {
 
         whichColumnComputer = (int) button.getLayoutX() / 60;
         whichRowComputer = (int) button.getLayoutY() / 60;
@@ -362,101 +214,13 @@ public class Checkers extends Application {
                 && whichColumnComputer + 1 > 0 && whichRowComputer + 1 > 0) {
             grid.getChildren().remove(button);
             grid.add(button, whichColumnComputer + 1, whichRowComputer + 1);
+            return true;
         }
-    }
-
-    public void moveComputer(GridPane grid, Button button) {
-        if (whichComputerPawn == 1 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 1 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 2 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 2 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 3 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 3 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 4 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 4 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 5 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 5 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 6 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 6 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 7 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 7 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 8 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 8 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 9 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 9 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 10 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 10 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-
-        if (whichComputerPawn == 11 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 11 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-        if (whichComputerPawn == 12 && moveComputerLeftRight == 0){
-            moveComputerLeft(grid, button);
-        }
-        if (whichComputerPawn == 12 && moveComputerLeftRight == 1){
-            moveComputerRight(grid, button);
-        }
-
-
+        return false;
     }
 
 
-    Button button = new Button();
-    public void mouseMoved(MouseEvent event) {
-        double sceneX;
-        double sceneY;
-        sceneX = event.getSceneX();
-        sceneY = event.getSceneY();
-        whichColumn = (int) sceneX / 60;
-        whichRow = (int) sceneY / 60;
-
-
-    }
-
-    public void mouseMovedReleased(MouseEvent event,GridPane grid, Button button, boolean isBlackPawn) {
+    public boolean mouseMovedReleased(MouseEvent event,GridPane grid, Button button, boolean isBlackPawn) {
 
         double sceneX;
         double sceneY;
@@ -478,24 +242,32 @@ public class Checkers extends Application {
 
         Node isEmpty = getNodeFromGridPane(grid,whichColumn,whichRow);
         if (isEmpty == null && whichColumn <=8 && whichRow <=8 && whichColumn >0 && whichRow >0) {
-           grid.getChildren().remove(button);
-           grid.add(button,whichColumn, whichRow);
+            grid.getChildren().remove(button);
+            grid.add(button,whichColumn, whichRow);
+            //grid.add(button,whichColumn+1,whichRow+1);
 
 
         }
         else if (isEmpty == null && whichColumn >=8 && whichRow >=8) {
             grid.getChildren().remove(button);
             grid.add(button,column,row);
+            return noMovePawn = true;
         }
 
         else  {
             grid.getChildren().remove(button);
             grid.add(button,column,row);
+            return noMovePawn = true;
 
         }
 
+        if (whichColumn == column && whichRow == row) {
+            return noMovePawn = true;
 
-
+        }
+        else {
+            return noMovePawn = false;
+        }
 
     }
 
@@ -514,18 +286,7 @@ public class Checkers extends Application {
         row = parameters.getRow();
     }
 
-    public void setGraphicsBlack(Button button) {
-        button.setMaxSize(50, 50);
-        button.setGraphic(new ImageView(imageBlackPawnB));
-        button.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
-    }
-
-    public void setGraphicsWhite(Button button) {
-        button.setMaxSize(50, 50);
-        button.setGraphic(new ImageView(imageBlackPawnW));
-        button.setStyle("-fx-border-color:rgba(0%, 0%, 100%, 0); -fx-background-color: rgba(0%, 0%, 100%, 0)");
-    }
-
+   
     private Node getNodeFromGridPane(GridPane grid, int col, int row) {
         for (Node node : grid.getChildren()) {
             if (GridPane.getColumnIndex(node) == col && GridPane.getRowIndex(node) == row) {
@@ -535,18 +296,58 @@ public class Checkers extends Application {
         }
         return null;
     }
-    private void buttonSetAction(Button button, GridPane grid) {
-       // button.setOnAction((e) -> {
-        //    makeMove(e, true);
-       // });
+    private void buttonSetActionWhite(Button button, GridPane grid, boolean isBlackPawn) {
+        // button.setOnAction((e) -> {
+        //    makeMove(true);
+        // });
         button.setOnMousePressed((event) -> {
             mouseMovedPressed(event, button);
         });
 
         button.setOnMouseReleased((event) -> {
-            mouseMovedReleased(event, grid, button,true);
+            mouseMovedReleased(event, grid, button,isBlackPawn);
+            if(!isBlackPawn) {
+                computerMove(grid);
+            }
+        });
+    }
+
+    private void buttonSetActionBlack(Button button, GridPane grid, boolean isBlackPawn) {
+        // button.setOnAction((e) -> {
+        //    makeMove(true);
+        // });
+
+
+        button.setOnMouseEntered(event -> {
+            mouseMovedEntered(event,button);
         });
 
     }
+    private void killPawnLeft() {
+
+
+    }
+
+    private void killPawnRight() {
+
+
+    }
+
+    public void mouseMovedEntered(MouseEvent event, Button button) {
+       /* double sceneX;
+        double sceneY;
+        sceneX = event.getSceneX();
+        sceneY = event.getSceneY();
+        whichColumn = (int) sceneX / 60;
+        whichRow = (int) sceneY / 60;
+        ButtonParameters buttonParameters = new ButtonParameters(whichColumn,whichRow);
+        HashMap<Button,ButtonParameters> buttonParametersHashMap = new HashMap<>();
+        buttonParametersHashMap.put(button,buttonParameters);
+        ButtonParameters parameters = buttonParametersHashMap.get(button);
+        column = parameters.getColumn();
+        row = parameters.getRow(); */
+        System.out.println("jestem nad pionkiem");
+    }
+
 
 }
