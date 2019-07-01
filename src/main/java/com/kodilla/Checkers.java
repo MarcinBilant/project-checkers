@@ -1,3 +1,5 @@
+package com.kodilla;
+
 import com.kodilla.ButtonParameters;
 import com.kodilla.MoveResult;
 import com.kodilla.PawnFactory;
@@ -19,16 +21,16 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-
-import java.io.File;
+import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Stream;
+import java.io.NotSerializableException;
+import java.io.Serializable;
+
 
 public class Checkers extends Application {
 
@@ -54,6 +56,8 @@ public class Checkers extends Application {
     private boolean noMovePawn;
     private String name;
     private String surname;
+
+
 
 
         public static void main(String[] args) {
@@ -127,7 +131,17 @@ public class Checkers extends Application {
                 surnameField.setDisable(false);
             });
 
+            Button saveGame = new Button("Zapisz gre");
 
+            saveGame.setOnAction((e) -> {
+                saveMap();
+            });
+
+            Button readGame = new Button("Wczytaj gre");
+
+            readGame.setOnAction((e) -> {
+                loadMap();
+            });
 
             MenuBar menuBar = new MenuBar ();
             Menu menu1 = new Menu("Opis");
@@ -141,7 +155,7 @@ public class Checkers extends Application {
             File file = new File(classLoader.getResource("files/rulesOfGames2.txt").getFile());
             Path path = Paths.get(file.getPath());
             Stream<String> fileLines = Files.lines(path);
-            fileLines.forEach(System.out::println);
+            //fileLines.forEach(System.out::println);
 
             menu1.setOnAction((e) -> {
 
@@ -188,9 +202,12 @@ public class Checkers extends Application {
             HBox buttonHbox = new HBox(10);
             buttonHbox.setPadding(new Insets(0, 10, 0, 10));
             buttonHbox.getChildren().addAll(save,reset);
+            VBox saveReadGameVbox = new VBox(10);
 
             grid.add(daneVbox,10,1);
             grid.add(buttonHbox,10,3);
+            saveReadGameVbox.getChildren().addAll(saveGame,readGame);
+            grid.add(saveReadGameVbox,10,5);
 
 
 
@@ -259,7 +276,7 @@ public class Checkers extends Application {
             //Scene scene1 = new Scene();
 
 
-            primaryStage.setTitle("Checkers");
+            primaryStage.setTitle("com.kodilla.Checkers");
             primaryStage.setScene(scene);
             //primaryStage.setScene(scene1);
             //primaryStage.setResizable(false);
@@ -511,6 +528,37 @@ public class Checkers extends Application {
             System.out.println("jestem nad pionkiem");
         }
 
+
+    private File savedButtonMaps = new File("button.list");
+    private Map<String, List<Button>> blackMap = new HashMap<>();
+    private Map<String, List<Button>> whiteMap = new HashMap<>();
+
+    public void saveMap() {
+        try {
+            blackMap.put("blackPawn",blackButtons);
+            whiteMap.put("whitePawn",whiteButtons);
+            ObjectOutputStream oos = new ObjectOutputStream (new FileOutputStream(savedButtonMaps));
+            oos.writeObject(blackMap);
+            oos.writeObject(whiteMap);
+            oos.close();
+        } catch (Exception e) {
+            System.out.println("wystąpił błąd: " + e);
+        }
+    }
+
+    public void loadMap() {
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(savedButtonMaps));
+            Object readMap = ois.readObject();
+            if(readMap instanceof HashMap) {
+                blackMap.putAll((HashMap) readMap);
+                whiteMap.putAll((HashMap) readMap);
+            }
+            ois.close();
+        } catch (Exception e) {
+            System.out.println("wystąpił błąd: " + e);
+        }
+    }
 
 
     }
